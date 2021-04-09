@@ -1,0 +1,46 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+ uses
+  System.SysUtils;
+
+const sz=100; //Размер массива
+ var
+  A: array[1..sz] of real;
+  N :integer; //Кол-во эл-тов массива
+  i :byte;    //Индексы
+
+begin
+ writeln('Введите кол-во элементов массива');
+ readln(N);
+ writeln('Введите элементы массива');
+  for i := 1 to N do                  //Ввод эл-тов массива
+   begin
+   readln(a[i]);
+   end;
+ writeln('Введенный массив:');
+ for i := 1 to N do                   //Вывод эл-тов массива
+   begin
+   write(a[i]:1:0, ' ');
+   end;
+ writeln('');  
+ writeln('Преобразованный массив:');
+  
+   for I := 1 to N-1 do               //Цикл для перехода к след. эл-ту массива
+     begin
+       if a[i]<a[i+1] then           //Проверка символа на вшивость
+          begin
+            a[i]:=a[i+1];
+          end
+       else
+        a[i]:=0;
+        write(a[i]:1:0,' ');        //Вывод преобразованного массива
+             
+     end;
+ write(a[n]:1:0);
+writeln('Press enter to finish programm');
+readln;
+end.

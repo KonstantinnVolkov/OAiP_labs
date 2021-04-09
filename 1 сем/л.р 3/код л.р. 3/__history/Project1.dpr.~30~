@@ -1,0 +1,54 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils, math;
+Var k,i,n: integer;
+    x,f1,f2,E,slp,ch, slt: real;
+begin
+x := -0.6;
+    writeln('------------------------------------------------------------------------');
+    writeln('|  X    |    f1      |   E=0.0001     |   E=0.00001   |   E=0.000001    |');
+    writeln('|       |            |----------------|----------------|----------------|');
+    writeln('|       |            |      f2(x)  | N|    f2(x)    |N |     f2(x)   |N |');
+    writeln('-------------------------------------------------------------------------');
+ repeat
+
+           E:=0.0001;
+           f1:= (x*x*x)/12+1/16*(x*x*x*x-1)*(ln((1+x)/(1-x))-2*arctan(x));
+           write('|',x:5:2,'  |',f1:12:7,'|');
+           k:=0;
+           ch:=power(x,7);
+           slp:=ch/((4*k+3)*(4*k+7));
+           f2:=slp;
+           n:=1;
+        repeat
+
+              repeat
+                n:=n+1;
+                k:=k+1;
+                ch:=ch*x*x*x*x;
+                slt:=ch/((4*k+3)*(4*k+7));
+                f2:=f2+slt;
+              until abs(slt)<=E;
+                if E>=0.0001 then write(f2:10:5,'   |')
+                else
+                begin
+                    if (E<0.0001) and (E>=0.00001) then
+                    write(f2:10:6,'   |') else write(f2:10:7,'   |');
+                end;
+                write(n,' |');
+                E:=E/10;
+        until E<=0.000001;
+            writeln(' ');
+           x:=x+0.05;
+           i:=i+1;
+
+ until i>=20;
+ readln;
+end.
+
+

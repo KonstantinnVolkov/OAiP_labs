@@ -1,0 +1,65 @@
+program Project1;
+
+uses
+  System.SysUtils,
+  math;
+
+var x,y,z,t,cod,R :integer;
+    N,n1 :longint;
+    Str :string;
+    R1 :real;
+
+begin
+R:=1;
+cod:=1;
+while R<>0 do       //Проверка корректности ввода
+ begin
+  repeat
+    writeln('Введите число N');
+    readln(Str);   //Ввод числа N
+   if length(str)>10 then writeln('Ошибка, попробуйте снова!')
+  until length(str)<=10;
+  while cod<>0 do
+   begin
+    val(Str,R1,cod);
+    if cod<>0 then
+     begin
+      writeln('Ошибка, попробуйте снова!');
+       repeat
+          writeln('Введите число N');
+          readln(Str);   //Ввод числа N
+          if length(str)>10 then writeln('Ошибка, попробуйте снова!')
+       until length(str)<=10;
+     end
+
+   end;
+ N:=strtoint(str);
+  if (N<=0) or (N>=2000000000) then
+   writeln('Ошибка, попробуйте снова!')
+  else R:=0;
+ end;
+
+
+ n1:=N;
+
+ x:=trunc(sqrt(n1));    //Вычисление первого слагаемого
+ n1:=n1-sqr(x);         //Вычисление суммы оставшихся трех кадратов чисел
+
+ y:=trunc(sqrt(n1));
+ n1:=n1-sqr(y);
+
+ z:=trunc(sqrt(n1));
+ n1:=n1-sqr(z);
+
+ t:=trunc(sqrt(n1));
+
+if(sqr(x)+sqr(y)+sqr(z)+sqr(t)=N) then  //Равна ли сумма квадратов чисел числу N
+begin
+   writeln('Значения: ','x=', x,', ','y=',y,', ','z=',z,', ','t=',t,';'); //Вывод X,Y,Z,T
+   writeln('Число подходит ',sqr(x),'+',sqr(y),'+',sqr(z),'+',sqr(t),'=',N); //Вывод примера
+   readln
+end
+else
+writeln('Невозможно выполнить для данного числа');
+readln
+end.

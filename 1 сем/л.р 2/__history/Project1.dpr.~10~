@@ -1,0 +1,41 @@
+program project2;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  math;
+var
+  k,n :integer;
+  F,x,s: real;
+
+begin
+ x:=0.6;
+  while x<=1.11 do
+   begin
+   n:=10;
+     while n<15 do
+     begin
+       s:=0;
+       k:=1;
+       f:=exp(1.5*ln(sin(x/n)));
+         while k<=n do
+          begin
+            s:=s+(1+(k+1)/n)/(exp(k)*power(power(x,k-1),1/2)+ln(x));
+            k:=k+1;
+          end;
+       f:=f*s;
+       writeln('n=',n,' x=',x:4:3,' f=',f:5:3);
+       n:=n+1;
+     end;
+   x:=x+0.25;
+   writeln('');
+   writeln('press enter');
+   readln
+   end;
+writeln('press enter to finish programm');
+readln;
+end.
+
