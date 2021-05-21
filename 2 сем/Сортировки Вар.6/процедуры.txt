@@ -1,0 +1,134 @@
+procedure bubble(var Form1: TForm1);
+begin
+  // generate_mas(10, a, Form1); // Генерим массив
+  // bubble_sort(a); // сортируем его
+  // Form1.comp10_bubble_U.Caption := IntToStr(compare);
+  // Form1.trans10_bubble_U.Caption := IntToStr(transposition);
+  // bubble_sort(a); // сортируем отсортированный
+  // Form1.comp10_bubble_S.Caption := IntToStr(compare);
+  // Form1.trans10_bubble_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // bubble_sort(a); // сортируем реверснутый
+  // Form1.comp10_bubble_R.Caption := IntToStr(compare);
+  // Form1.trans10_bubble_R.Caption := IntToStr(transposition);
+
+  // generate_mas(100, a, Form1); // Генерим массив
+  // bubble_sort(a); // сортируем его
+  // Form1.comp100_bubble_U.Caption := IntToStr(compare);
+  // Form1.trans100_bubble_U.Caption := IntToStr(transposition);
+  // bubble_sort(a); // сортируем отсортированный
+  // Form1.comp100_bubble_S.Caption := IntToStr(compare);
+  // Form1.trans100_bubble_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // bubble_sort(a); // сортируем реверснутый
+  // Form1.comp100_bubble_R.Caption := IntToStr(compare);
+  // Form1.trans100_bubble_R.Caption := IntToStr(transposition);
+
+  // generate_mas(2000, a, Form1); // Генерим массив
+  // bubble_sort(a); // сортируем его
+  // Form1.comp2000_bubble_U.Caption := IntToStr(compare);
+  // Form1.trans2000_bubble_U.Caption := IntToStr(transposition);
+  // bubble_sort(a); // сортируем отсортированный
+  // Form1.comp2000_bubble_S.Caption := IntToStr(compare);
+  // Form1.trans2000_bubble_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // bubble_sort(a); // сортируем реверснутый
+  // Form1.comp2000_bubble_R.Caption := IntToStr(compare);
+  // Form1.trans2000_bubble_R.Caption := IntToStr(transposition);
+end;
+
+procedure quick(var Form1: TForm1);
+begin
+  // compare := 0;
+  // transposition := 0;
+  // generate_mas(10, a, Form1); // Генерим массив
+  // quick_sort(a,0,9); // сортируем его
+  // Form1.comp10_quick_U.Caption := IntToStr(compare);
+  // Form1.trans10_quick_U.Caption := IntToStr(transposition);
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a,0,9); // сортируем отсортированный
+  // Form1.comp10_quick_S.Caption := IntToStr(compare);
+  // Form1.trans10_quick_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a,0,9); // сортируем реверснутый
+  // Form1.comp10_quick_R.Caption := IntToStr(compare);
+  // Form1.trans10_quick_R.Caption := IntToStr(transposition);
+
+  // generate_mas(100, a, Form1); // Генерим массив
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a,0,99); // сортируем его
+  // Form1.comp100_quick_U.Caption := IntToStr(compare);
+  // Form1.trans100_quick_U.Caption := IntToStr(transposition);
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a,0,99); // сортируем отсортированный
+  // Form1.comp100_quick_S.Caption := IntToStr(compare);
+  // Form1.trans100_quick_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a,0,99); // сортируем реверснутый
+  // Form1.comp100_quick_R.Caption := IntToStr(compare);
+  // Form1.trans100_quick_R.Caption := IntToStr(transposition);
+
+  // generate_mas(2000, a, Form1); // Генерим массив
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a, 0, 1999); // сортируем его
+  // Form1.comp2000_quick_U.Caption := IntToStr(compare);
+  // Form1.trans2000_quick_U.Caption := IntToStr(transposition);
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a, 0, 1999); // сортируем отсортированный
+  // Form1.comp2000_quick_S.Caption := IntToStr(compare);
+  // Form1.trans2000_quick_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // compare := 0;
+  // transposition := 0;
+  // quick_sort(a, 0, 1999); // сортируем реверснутый
+  // Form1.comp2000_quick_R.Caption := IntToStr(compare);
+  // Form1.trans2000_quick_R.Caption := IntToStr(transposition);
+end;
+
+procedure straight_selection(var Form1: TForm1); // TODO:
+begin // ПЕРЕДЕЛАТЬ ДЛЯ ПРЯМОГО ВЫБОРА!!!!!!
+  // generate_mas(10, a, Form1); // Генерим массив
+  // selection(a); // сортируем его
+  // Form1.comp10_straight_U.Caption := IntToStr(compare);
+  // Form1.trans10_straight_U.Caption := IntToStr(transposition);
+  // selection(a); // сортируем отсортированный
+  // Form1.comp10_straight_S.Caption := IntToStr(compare);
+  // Form1.trans10_straight_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // selection(a); // сортируем реверснутый
+  // Form1.comp10_straight_R.Caption := IntToStr(compare);
+  // Form1.trans10_straight_R.Caption := IntToStr(transposition);
+
+  // generate_mas(100, a, Form1); // Генерим массив
+  // selection(a); // сортируем его
+  // Form1.comp100_straight_U.Caption := IntToStr(compare);
+  // Form1.trans100_straight_U.Caption := IntToStr(transposition);
+  // selection(a); // сортируем отсортированный
+  // Form1.comp100_straight_S.Caption := IntToStr(compare);
+  // Form1.trans100_straight_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // selection(a); // сортируем реверснутый
+  // Form1.comp100_straight_R.Caption := IntToStr(compare);
+  // Form1.trans100_straight_R.Caption := IntToStr(transposition);
+
+  // generate_mas(2000, a, Form1); // Генерим массив
+  // selection(a); // сортируем его
+  // Form1.comp2000_straight_U.Caption := IntToStr(compare);
+  // Form1.trans2000_straight_U.Caption := IntToStr(transposition);
+  // selection(a); // сортируем отсортированный
+  // Form1.comp2000_straight_S.Caption := IntToStr(compare);
+  // Form1.trans2000_straight_S.Caption := IntToStr(transposition);
+  // reverse_array(a); // реверс сортированного
+  // selection(a); // сортируем реверснутый
+  // Form1.comp2000_straight_R.Caption := IntToStr(compare);
+  // Form1.trans2000_straight_R.Caption := IntToStr(transposition);
+end;

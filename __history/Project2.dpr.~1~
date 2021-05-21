@@ -1,0 +1,30 @@
+program Project2;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var x,y,z,t,n1,N: real;
+
+begin
+  writeln('Enter N');
+  readln(N);
+  n1:=N;
+  x:=sqrt(n1);
+  n1:=n1-x;
+  y:=sqrt(n1);
+  n1:=n1-y;
+  z:=sqrt(n1);
+  n1:=n1-z;
+  t:=sqrt(n1);
+   if(x*x+y*y+z*z+t*t = N) then
+   begin
+  writeln('value of 'x','y','z','t' ');
+  writeln('N=x*x+y*y+z*z+t*t');
+  end
+   else
+  writeln('Wrong number');
+  readln
+end.
+ 

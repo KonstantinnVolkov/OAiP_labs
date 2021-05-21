@@ -1,0 +1,33 @@
+program Project1;
+
+uses
+  System.SysUtils,
+  math;
+
+var x,y,z,t,N,n1: integer;
+begin
+ writeln('Введите число N');
+ readln(N);   //Вод числа N
+ n1:=N;
+
+ x:=trunc(sqrt(n1));    //Вычисление первого слагаемого
+ n1:=n1-sqr(x);         //Вычисление суммы оставшихся трех кадратов чисел
+
+ y:=trunc(sqrt(n1));
+ n1:=n1-sqr(y);
+
+ z:=trunc(sqrt(n1));
+ n1:=n1-sqr(z);
+
+ t:=trunc(sqrt(n1));
+
+if(sqr(x)+sqr(y)+sqr(z)+sqr(t)=N) then  //Равна ли сумма квадратов чисел числу N
+begin
+   writeln('Значения: ','x=', x,', ','y=',y,', ','z=',z,', ','t=',t,';'); //Вывод X,Y,Z,T
+   writeln('Число подходит ',sqr(x),'+',sqr(y),'+',sqr(z),'+',sqr(t),'=',N); //Вывод примера
+   readln
+end
+else
+writeln('Невозможно выполнить для данного числа');
+readln
+end.

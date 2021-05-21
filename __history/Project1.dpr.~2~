@@ -1,0 +1,31 @@
+program Project1;
+
+uses
+  System.SysUtils,
+  math;
+
+var x,y,z,t,N,n1: integer;
+begin
+ writeln('Введите число N');
+ read(N);
+ n1:=N;
+
+ x:=trunc(sqrt(n1));
+ n1:=n1-sqr(x);
+
+ y:=trunc(sqrt(n1));
+ n1:=n1-sqr(y);
+
+ z:=trunc(sqrt(n1));
+ n1:=n1-sqr(z);
+
+ t:=trunc(sqrt(n1));
+
+if(sqr(x)+sqr(y)+sqr(z)+sqr(t)=N) then
+begin
+   writeln('Значения: ','x=', x,', ','y=',y,', ','z=',z,', ','t=',t,';');
+   writeln('Число подходит ',sqr(x),'+',sqr(y),'+',sqr(z),'+',sqr(t),'=',N);
+   readln
+end;
+readln
+end.

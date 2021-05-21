@@ -1,0 +1,69 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids, Unit2, Unit3;
+
+type
+  TForm1 = class(TForm)
+    DataSG: TStringGrid;
+    Label1: TLabel;
+    SortCB: TComboBox;
+    SearchE: TEdit;
+    Label2: TLabel;
+    AddNewButton: TButton;
+    DeleteButton: TButton;
+    SearchButton: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure AddNewButtonClick(Sender: TObject);
+    procedure DataSGClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+var
+  Form1: TForm1;
+  List: Tlist;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.AddNewButtonClick(Sender: TObject);
+begin
+  form2.Show;
+end;
+
+procedure TForm1.DataSGClick(Sender: TObject);
+begin
+  dataSg.Options := dataSg.Options + [goEditing];
+  dataSg.Options := dataSg.Options + [goRowSelect];
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  curr: PTItem;
+begin
+  curr := nil;
+  List.Head := nil;
+  List.Tail := nil;
+  new(Curr);
+  Curr^.Data.Name := 'test';
+  addToEnd(List,Curr);
+  Curr^.Data.Name := 'test2';
+  AddToEnd(List,Curr);
+  ShowItems(List);
+  dataSg.Cells[0,0] := 'Тип';
+  dataSg.Cells[1,0] := 'Наименование';
+  dataSg.Cells[2,0] := 'Автор';
+  dataSg.Cells[3,0] := 'Цена';
+  dataSg.Cells[4,0] := 'Примечание';
+end;
+
+
+
+
+
+end.

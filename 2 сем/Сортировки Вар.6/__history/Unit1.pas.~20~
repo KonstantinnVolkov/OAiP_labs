@@ -1,0 +1,266 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TArray = array of integer;
+  TForm1 = class(TForm)
+    StaticText1: TStaticText;
+    StaticText13: TStaticText;
+    StaticText14: TStaticText;
+    StaticText17: TStaticText;
+    StaticText20: TStaticText;
+    comp10_bubble_U: TStaticText;
+    trans10_bubble_U: TStaticText;
+    StaticText2: TStaticText;
+    comp10_bubble_S: TStaticText;
+    trans10_bubble_S: TStaticText;
+    StaticText5: TStaticText;
+    comp10_bubble_R: TStaticText;
+    trans10_bubble_R: TStaticText;
+    StaticText8: TStaticText;
+    StaticText9: TStaticText;
+    StaticText10: TStaticText;
+    comp10_quick_U: TStaticText;
+    trans10_quick_U: TStaticText;
+    comp10_quick_S: TStaticText;
+    trans10_quick_S: TStaticText;
+    comp10_quick_R: TStaticText;
+    trans10_quick_R: TStaticText;
+    StaticText21: TStaticText;
+    StaticText22: TStaticText;
+    StaticText23: TStaticText;
+    comp10_straight: TStaticText;
+    trans10_straight: TStaticText;
+    StaticText26: TStaticText;
+    StaticText27: TStaticText;
+    StaticText28: TStaticText;
+    StaticText29: TStaticText;
+    StaticText30: TStaticText;
+    comp100_bubble_U: TStaticText;
+    trans100_bubble_U: TStaticText;
+    StaticText33: TStaticText;
+    comp100_bubble_S: TStaticText;
+    trans100_bubble_S: TStaticText;
+    StaticText36: TStaticText;
+    comp100_bubble_R: TStaticText;
+    trans100_bubble_R: TStaticText;
+    comp100_quick_U: TStaticText;
+    trans100_quick_U: TStaticText;
+    comp100_quick_S: TStaticText;
+    trans100_quick_S: TStaticText;
+    comp100_quick_R: TStaticText;
+    trans100_quick_R: TStaticText;
+    StaticText45: TStaticText;
+    StaticText46: TStaticText;
+    StaticText47: TStaticText;
+    StaticText48: TStaticText;
+    StaticText49: TStaticText;
+    StaticText50: TStaticText;
+    StaticText51: TStaticText;
+    comp2000_bubble_U: TStaticText;
+    trans2000_bubble_U: TStaticText;
+    StaticText54: TStaticText;
+    comp2000_bubble_S: TStaticText;
+    trans2000_bubble_S: TStaticText;
+    StaticText57: TStaticText;
+    comp2000_bubble_R: TStaticText;
+    trans2000_bubble_R: TStaticText;
+    comp2000_quick_U: TStaticText;
+    trans2000_quick_U: TStaticText;
+    comp2000_quick_S: TStaticText;
+    trans2000_quick_S: TStaticText;
+    comp2000_quick_R: TStaticText;
+    trans2000_quick_R: TStaticText;
+    StaticText66: TStaticText;
+    StaticText67: TStaticText;
+    StaticText68: TStaticText;
+    StaticText69: TStaticText;
+    StaticText70: TStaticText;
+    StaticText71: TStaticText;
+    Button1: TButton;
+    Arr10: TMemo;
+    Arr100: TMemo;
+    Arr2000: TMemo;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  a, Sorted, Reversed: TArray;
+  compare, transposition: integer;
+
+implementation
+
+{$R *.dfm}
+
+function bubble_sort(var arr: TArray): TArray;
+var
+  max, i, j, temp: integer;
+begin
+  compare := 0;
+  transposition := 0;
+  max := Length(arr) - 1;
+  for j := 0 to max do
+    for i := 0 to max - 1 do
+    begin
+      inc(compare);
+      if arr[i] > arr[i + 1] then
+      begin
+        temp := arr[i];
+        arr[i] := arr[i + 1];
+        arr[i + 1] := temp;
+        inc(transposition);
+      end;
+    end;
+end;
+
+function quick_sort(var arr: TArray; min, max :integer): TArray;
+var
+  temp, mid, supp, i, j :integer;
+begin
+  supp := arr[(max-min) div 2];
+  i := min;
+  j := max;
+  repeat
+    while a[i] < supp do inc(i);
+    while a[j] > supp do dec(j);
+    if i <= j then
+    begin
+      temp := a[i];
+      a[i] := a[j];
+      a[j] := temp;
+    end;
+  until i > j ;
+  if min<j then quick_sort(Arr, min, j);
+  if i<max then quick_sort(Arr, i, max);
+end;
+
+procedure reverse_array(arr: TArray);
+var
+  i, temp, max: integer;
+begin
+  max := Length(arr) - 1;
+  for i := 0 to Length(arr) div 2 do
+  begin
+    temp := arr[i];
+    arr[i] := arr[max - i];
+    arr[max - i] := temp;
+  end;
+  Reversed := arr;
+end;
+
+procedure generate_mas(Amount: integer; out arr: TArray; var Form1: TForm1);
+var
+  i: integer;
+begin
+  randomize;
+  SetLength(arr, Amount);
+  for i := 0 to Amount - 1 do
+  begin
+    arr[i] := random(Amount * 10);
+    case Amount of
+      10:
+        Form1.Arr10.Lines.Add(IntToStr(arr[i]));
+      100:
+        Form1.Arr100.Lines.Add(IntToStr(arr[i]));
+      2000:
+        Form1.Arr2000.Lines.Add(IntToStr(arr[i]));
+    end;
+  end;
+end;
+
+procedure bubble(var form1 :TForm1);
+begin
+  generate_mas(10, a, Form1); // Генерим массив
+  bubble_sort(a); // сортируем его
+  Form1.comp10_bubble_U.Caption := IntToStr(compare);
+  Form1.trans10_bubble_U.Caption := IntToStr(transposition);
+  bubble_sort(a); // сортируем отсортированный
+  Form1.comp10_bubble_S.Caption := IntToStr(compare);
+  Form1.trans10_bubble_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  bubble_sort(a); // сортируем реверснутый
+  Form1.comp10_bubble_R.Caption := IntToStr(compare);
+  Form1.trans10_bubble_R.Caption := IntToStr(transposition);
+
+  generate_mas(100, a, Form1); // Генерим массив
+  bubble_sort(a); // сортируем его
+  Form1.comp100_bubble_U.Caption := IntToStr(compare);
+  Form1.trans100_bubble_U.Caption := IntToStr(transposition);
+  bubble_sort(a); // сортируем отсортированный
+  Form1.comp100_bubble_S.Caption := IntToStr(compare);
+  Form1.trans100_bubble_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  bubble_sort(a); // сортируем реверснутый
+  Form1.comp100_bubble_R.Caption := IntToStr(compare);
+  Form1.trans100_bubble_R.Caption := IntToStr(transposition);
+
+  generate_mas(2000, a, Form1); // Генерим массив
+  bubble_sort(a); // сортируем его
+  Form1.comp2000_bubble_U.Caption := IntToStr(compare);
+  Form1.trans2000_bubble_U.Caption := IntToStr(transposition);
+  bubble_sort(a); // сортируем отсортированный
+  Form1.comp2000_bubble_S.Caption := IntToStr(compare);
+  Form1.trans2000_bubble_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  bubble_sort(a); // сортируем реверснутый
+  Form1.comp2000_bubble_R.Caption := IntToStr(compare);
+  Form1.trans2000_bubble_R.Caption := IntToStr(transposition);
+end;
+
+procedure quick(var form1 :TForm1);
+begin
+  generate_mas(10, a, Form1); // Генерим массив
+  quick_sort(a,0,9); // сортируем его
+  Form1.comp10_quick_U.Caption := IntToStr(compare);
+  Form1.trans10_quick_U.Caption := IntToStr(transposition);
+  quick_sort(a,0,9); // сортируем отсортированный
+  Form1.comp10_quick_S.Caption := IntToStr(compare);
+  Form1.trans10_quick_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  quick_sort(a,0,9); // сортируем реверснутый
+  Form1.comp10_quick_R.Caption := IntToStr(compare);
+  Form1.trans10_quick_R.Caption := IntToStr(transposition);
+
+  generate_mas(100, a, Form1); // Генерим массив
+  quick_sort(a,0,99); // сортируем его
+  Form1.comp100_quick_U.Caption := IntToStr(compare);
+  Form1.trans100_quick_U.Caption := IntToStr(transposition);
+  quick_sort(a,0,99); // сортируем отсортированный
+  Form1.comp100_quick_S.Caption := IntToStr(compare);
+  Form1.trans100_quick_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  quick_sort(a,0,99); // сортируем реверснутый
+  Form1.comp100_quick_R.Caption := IntToStr(compare);
+  Form1.trans100_quick_R.Caption := IntToStr(transposition);
+
+  generate_mas(2000, a, Form1); // Генерим массив
+  quick_sort(a,0,1999); // сортируем его
+  Form1.comp2000_quick_U.Caption := IntToStr(compare);
+  Form1.trans2000_quick_U.Caption := IntToStr(transposition);
+  quick_sort(a,0,1999); // сортируем отсортированный
+  Form1.comp2000_quick_S.Caption := IntToStr(compare);
+  Form1.trans2000_quick_S.Caption := IntToStr(transposition);
+  reverse_array(a); // реверс сортированного
+  quick_sort(a,0,1999); // сортируем реверснутый
+  Form1.comp2000_quick_R.Caption := IntToStr(compare);
+  Form1.trans2000_quick_R.Caption := IntToStr(transposition);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  bubble(Form1);
+  quick(Form1);
+end;
+
+end.

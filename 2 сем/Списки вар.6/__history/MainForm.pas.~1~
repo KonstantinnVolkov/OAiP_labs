@@ -1,0 +1,56 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids, Unit2;
+
+type
+  TForm1 = class(TForm)
+    DataSG: TStringGrid;
+    Label1: TLabel;
+    SortCB: TComboBox;
+    SearchE: TEdit;
+    Label2: TLabel;
+    AddButton: TButton;
+    DeleteButton: TButton;
+    SearchButton: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure AddButtonClick(Sender: TObject);
+    procedure DataSGClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.AddButtonClick(Sender: TObject);
+begin
+  form2.Show;
+end;
+
+procedure TForm1.DataSGClick(Sender: TObject);
+begin
+  dataSg.Options := dataSg.Options + [goEditing];
+  dataSg.Options := dataSg.Options + [goRowSelect];
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+  dataSg.Cells[0,0] := 'Тип';
+  dataSg.Cells[1,0] := 'Наименование';
+  dataSg.Cells[2,0] := 'Автор';
+  dataSg.Cells[3,0] := 'Цена';
+  dataSg.Cells[4,0] := 'Примечание';
+end;
+
+end.
