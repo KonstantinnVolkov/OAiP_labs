@@ -1,0 +1,51 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids, API, AddForm;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    SortBy: TComboBox;
+    MainTable: TStringGrid;
+    AddButton: TButton;
+    DelButton: TButton;
+    CreateButton: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure AddButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.AddButtonClick(Sender: TObject);
+begin
+  AddForm.Form2.Position := poScreenCenter;
+  AddForm.Form2.Visible := True;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  MainTable.Cells[0,0] := 'Тип';
+  MainTable.Cells[1,0] := 'Наименование';
+  MainTable.Cells[2,0] := 'Автор';
+  MainTable.Cells[3,0] := 'Цена';
+  MainTable.Cells[4,0] := 'Примечание';
+  API.List.Head := nil;
+  API.List.Tail := nil;
+end;
+
+end.

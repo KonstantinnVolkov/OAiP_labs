@@ -1,0 +1,109 @@
+unit API;
+
+interface
+
+Type
+  TData = record
+    DataType: String[80];
+    Name: String[80];
+    Author: String[80];
+    cost: String[80];
+    Other: String[80];
+  end;
+
+  ptr = ^TElement;
+
+  TElement = record
+    next, prev: ptr;
+    data: TData;
+  end;
+
+  TList = record
+    Head, Tail: ptr;
+  end;
+
+var
+  Info: TData;
+  List: TList;
+
+procedure CreateNewEl(data: TData);
+procedure LoadList(var List: TList);
+procedure AddToEnd(var List: TList; var NewElement: ptr);
+procedure SaveList(const List: TList);
+
+
+implementation
+
+procedure CreateNewEl(data: TData);
+var
+  List: TList;
+  curr: ptr;
+begin
+  LoadList(List);
+  New(curr);
+  curr.data := data;
+  AddToEnd(List, curr);
+  SaveList(List);
+end;
+
+procedure LoadList(var List: TList);
+var
+  f: file of TData;
+  tmp, curr: ptr;
+  cnt: integer;
+begin
+  cnt := 0;
+  List.head := nil;
+  List.tail := nil;
+  AssignFile(f, 'Data.txt');
+  Reset(f);
+  New(curr);
+  if FileSize(f) <> 0 then
+  begin
+    Read(f, curr^.data);
+    AddToEnd(List, curr);
+    while not EOF(f) do
+    begin
+      tmp := curr;
+      New(curr);
+      Read(f, curr.data);
+      AddToEnd(List, curr);
+      tmp.next := curr;
+      curr.prev := tmp;
+      cnt := cnt + 1;
+    end;
+  end;
+end;
+
+procedure AddToEnd(var List: TList; var NewElement: ptr);
+begin
+  if List.head = nil then
+  begin
+    List.head := NewElement;
+    List.tail := NewElement;
+    NewElement.next := nil;
+    NewElement.prev := nil;
+    exit;
+  end;
+  NewElement.next := nil;
+  NewElement.prev := List.tail;
+  List.tail.next := NewElement;
+  List.tail := NewElement;
+end;
+
+procedure SaveList(const List: TList);
+var
+  f: file of TData;
+  curr: ptr;
+begin
+  AssignFile(f, 'Data.txt');
+  Rewrite(f);
+  curr := List.head;
+  while curr <> nil do
+  begin
+    Write(f, curr^.data);
+    curr := curr^.next;
+  end;
+end;
+
+end.

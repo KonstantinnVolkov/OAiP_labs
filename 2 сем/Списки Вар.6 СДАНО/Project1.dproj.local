@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.648,G:\Новая папка\SearchForm.dfm=G:\Новая папка\Unit5.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.398,=G:\Новая папка\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.134,G:\Новая папка\Unit4.pas=G:\Новая папка\EditForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.474,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.347,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.278,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.648,G:\Новая папка\SearchForm.pas=G:\Новая папка\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.983,D:\Delphi proj\Новая папка\MainForm.dfm=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\MainForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.329,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.983,D:\Delphi proj\Новая папка\MainForm.pas=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\MainForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.106,D:\Delphi proj\Новая папка\AddForm.pas=D:\Delphi proj\Новая папка\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.928,=G:\Новая папка\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.134,C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\MainForm.pas=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.565,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.568,=D:\Delphi proj\Новая папка\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.042,=D:\Delphi proj\Новая папка\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.213,D:\Delphi proj\Новая папка\API.pas=D:\Delphi proj\Новая папка\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.488,D:\Delphi proj\Новая папка\Project1.dproj=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.010,G:\Новая папка\Unit3.dfm=G:\Новая папка\DeleteForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.134,G:\Новая папка\Unit4.dfm=G:\Новая папка\EditForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.010,G:\Новая папка\Unit3.pas=G:\Новая папка\DeleteForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.017,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.127,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.733,=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.568,=G:\Новая папка\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.106,D:\Delphi proj\Новая папка\AddForm.dfm=D:\Delphi proj\Новая папка\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.134,C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\MainForm.dfm=C:\Users\volko\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="API.pas"/>
+    <File Path="AddForm.pas"/>
+    <File Path="AddForm.dfm"/>
+    <File Path="DeleteForm.pas"/>
+    <File Path="DeleteForm.dfm"/>
+    <File Path="MainForm.pas"/>
+    <File Path="MainForm.dfm"/>
+    <File Path="EditForm.pas"/>
+    <File Path="EditForm.dfm"/>
+    <File Path="SearchForm.pas"/>
+    <File Path="SearchForm.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

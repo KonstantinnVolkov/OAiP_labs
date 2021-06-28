@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="fTable.pas"/>
+    <File Path="fTable.dfm"/>
+    <File Path="gisto.pas"/>
+    <File Path="gisto.dfm"/>
+    <File Path="Logic.pas"/>
+    <File Path="main.pas"/>
+    <File Path="main.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

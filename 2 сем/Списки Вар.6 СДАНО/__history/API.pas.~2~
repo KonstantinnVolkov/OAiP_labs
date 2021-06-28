@@ -1,0 +1,65 @@
+unit API;
+
+interface
+
+Type
+  TUsefulInfo = record
+    DataType: String[80];
+    Name: String[80];
+    Author: String[80];
+    cost: String[80];
+    Other: String[80];
+  end;
+
+  ptr = ^Element;
+
+  Element = record
+    next, prev: ptr;
+    data: TUsefulInfo;
+  end;
+
+  TList = record
+    Head, Tail: ptr;
+  end;
+
+var
+  Info: TUsefulInfo;
+  List: TList;
+
+procedure NewItem (Item: TUsefulInfo);
+procedure AddToEnd();
+procedure AddNewEl ();
+
+implementation
+
+uses
+  MainForm, AddForm;
+
+procedure NewItem (Item: TUsefulInfo);
+begin
+
+end;
+
+procedure AddToEnd();
+var
+  curr: ptr;
+begin
+  new(
+  if List.Head = nil then
+  begin
+    new(curr);
+    list.Head := curr;
+    List.Tail := curr;
+    curr.next := nil;
+    curr.prev := nil;
+    exit;
+  end;
+
+end;
+
+procedure AddNewEl ();
+begin
+
+end;
+
+end.
